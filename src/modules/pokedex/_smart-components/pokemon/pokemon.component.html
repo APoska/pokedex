@@ -1,0 +1,16 @@
+<div class="pokemon">
+  <div class="pokemon__image">
+    <img [src]="pokemon?.image" alt="{{ pokemon?.name }} sprite" />
+  </div>
+  <p class="pokemon__name">{{ pokemon?.name }}</p>
+  <div class="pokemon__info">
+    <p class="pokemon__data" *ngIf="pokemon.weight">
+      Waga
+      <span class="pokemon__data-value">{{ pokemon.weight }} kg</span>
+    </p>
+    <p class="pokemon__data" *ngIf="pokemon.height">
+      Wysokość
+      <span class="pokemon__data-value">{{ pokemon.height }} cm</span>
+    </p>
+  </div>
+</div>

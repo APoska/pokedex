@@ -1,0 +1,27 @@
+<header><app-header></app-header></header>
+<main class="container">
+  <form [formGroup]="form" class="form">
+    <mat-form-field appearance="outline">
+      <mat-label>Wyszukaj</mat-label>
+      <input matInput formControlName="search" id="searchInput"/>
+    </mat-form-field>
+  </form>
+  <section class="pokemons">
+    <article
+      class="pokemons__pokemon"
+      *ngFor="let pokemon of pokemonList | slice: 0:limit"
+    >
+      <app-pokemon [pokemon]="pokemon"></app-pokemon>
+    </article>
+  </section>
+  <div class="button">
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="limit > pokemonList?.length"
+      (click)="loadMore()"
+    >
+      Pokaż więcej
+    </button>
+  </div>
+</main>
